@@ -5,10 +5,10 @@ export const plansMap = [
       description: "Get started with SpeakEasy!",
       price: "10",
       items: ["3 Blog Posts", "3 Transcription"],
-      paymentLink: "https://buy.stripe.com/test_aEU9D35X65fH0MMeUW",
+      paymentLink: "https://buy.stripe.com/test_aEUfZhbQy2sbcA8cMM",
       priceId:
         process.env.NODE_ENV === "development"
-          ? "price_1PtLVqBPnsISnc82CW4au1uq"
+          ? "price_1QAn4PRp3enRPkCo2Qy4MUOu"
           : "",
     },
     {
@@ -17,10 +17,10 @@ export const plansMap = [
       description: "All Blog Posts, let’s go!",
       price: "19.99",
       items: ["Unlimited Blog Posts", "Unlimited Transcriptions"],
-      paymentLink: "https://buy.stripe.com/test_cN26qRclufUl9jibIL",
+      paymentLink: "https://buy.stripe.com/test_5kA9AT5sa8Qz0Rq145",
       priceId:
         process.env.NODE_ENV === "development"
-          ? "price_1PtLVqBPnsISnc82bspCVu5e"
+          ? "price_1QAn4sRp3enRPkCow2Wayajk"
           : "",
     },
   ];
@@ -29,3 +29,7 @@ export const plansMap = [
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
       : "https://speakeasyai-demo.vercel.app";
+
+
+
+

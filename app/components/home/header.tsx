@@ -1,12 +1,21 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
-const NavLink = ({href,children}:{href:string;children:React.ReactNode}) => {
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => {
   return (
     <Link
       href={href}
       className="transition-colors duration-200 text-gray-600 hover:text-purple-500"
-    >{children}</Link>
+    >
+      {children}
+    </Link>
   );
 };
 
@@ -30,15 +39,27 @@ export default function Header() {
 
       <div className="flex lg:justify-center gap-2 lg:gap-12 lg:items-center">
         <NavLink href="/#posts">Pricing</NavLink>
-        <NavLink href="/#posts">Your Posts</NavLink>
+        <SignedIn>
+          <NavLink href="/#posts">Your Posts</NavLink>
+        </SignedIn>
       </div>
 
       <div className="flex lg:justify-end lg:flex-1">
-        <div className="">
-            <NavLink href="/dashboard">Upload a Video</NavLink>
-        </div>
+        <SignedIn>
+          <NavLink href="/dashboard">Upload a Video</NavLink>
+        </SignedIn>
 
-        <NavLink href="/sign-in">Sign</NavLink>
+        <div className="px-4">
+          {" "}
+          <SignedOut>
+            <SignInButton>
+              <NavLink href="/sign-in">SignIn</NavLink>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
       </div>
     </nav>
   );
