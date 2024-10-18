@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BgGradient = ({children,className}:{children:React.ReactNode; className?:string}) => {
+const BgGradient = ({children,className}:{children?:React.ReactNode; className?:string}) => {
   return (
     <div
     aria-hidden="true"
